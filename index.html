@@ -1,138 +1,179 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Sneho's Birthday</title>
 
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        body{
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            font-family:'Trebuchet MS', sans-serif;
-            background:linear-gradient(135deg,#ffb6d9,#ffcce6,#e6ccff);
-            overflow:hidden;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px 15px;
+            font-family: 'Trebuchet MS', sans-serif;
+            background: linear-gradient(
+                135deg,
+                #ffb6d9,
+                #ffcce6,
+                #e6ccff
+            );
+            overflow-x: hidden;
         }
 
-        .balloon{
-            position:absolute;
-            font-size:50px;
-            animation:float 6s infinite ease-in-out;
+        .balloon {
+            position: fixed;
+            font-size: 50px;
+            animation: float 6s infinite ease-in-out;
+            pointer-events: none;
         }
 
-        .b1{
-            left:5%;
-            top:10%;
+        .b1 {
+            left: 5%;
+            top: 10%;
         }
 
-        .b2{
-            right:5%;
-            top:15%;
-            animation-delay:1s;
+        .b2 {
+            right: 5%;
+            top: 15%;
+            animation-delay: 1s;
         }
 
-        .b3{
-            left:10%;
-            bottom:10%;
-            animation-delay:2s;
+        .b3 {
+            left: 10%;
+            bottom: 10%;
+            animation-delay: 2s;
         }
 
-        .b4{
-            right:10%;
-            bottom:12%;
-            animation-delay:3s;
+        .b4 {
+            right: 10%;
+            bottom: 12%;
+            animation-delay: 3s;
         }
 
-        @keyframes float{
-            0%,100%{
-                transform:translateY(0);
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
             }
-            50%{
-                transform:translateY(-20px);
+
+            50% {
+                transform: translateY(-20px);
             }
         }
 
-        .card{
-            background:white;
-            padding:50px;
-            border-radius:25px;
-            text-align:center;
-            width:700px;
-            box-shadow:0 0 30px rgba(0,0,0,.2);
+        .card {
+            background: white;
+            padding: 45px 35px;
+            border-radius: 25px;
+            text-align: center;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
         }
 
-        h1{
-            color:#ff1493;
-            font-size:52px;
-            margin-bottom:15px;
+        h1 {
+            color: #ff1493;
+            font-size: clamp(30px, 5vw, 52px);
+            line-height: 1.3;
+            margin-bottom: 18px;
+            overflow-wrap: break-word;
         }
 
-        h2{
-            color:#c71585;
-            margin-bottom:20px;
+        h2 {
+            color: #c71585;
+            font-size: clamp(19px, 3vw, 26px);
+            line-height: 1.5;
+            margin-bottom: 22px;
         }
 
-        p{
-            font-size:20px;
-            line-height:1.8;
-            color:#555;
+        p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #555;
+            overflow-wrap: break-word;
         }
 
-        .emoji{
-            font-size:35px;
-            margin-bottom:15px;
+        .emoji {
+            font-size: 35px;
+            margin-bottom: 20px;
         }
 
-        a{
-            display:inline-block;
-            margin-top:25px;
-            text-decoration:none;
-            background:#ff1493;
-            color:white;
-            padding:15px 30px;
-            border-radius:15px;
-            font-size:20px;
-            transition:0.3s;
+        .surprise-btn {
+            display: inline-block;
+            margin-top: 28px;
+            text-decoration: none;
+            background: #ff1493;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            font-size: 19px;
+            line-height: 1.5;
+            transition: transform 0.3s, background 0.3s;
         }
 
-        a:hover{
-            transform:scale(1.08);
-            background:#ff007f;
+        .surprise-btn:hover {
+            transform: scale(1.05);
+            background: #ff007f;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 35px 20px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            .balloon {
+                font-size: 35px;
+            }
+
+            .surprise-btn {
+                font-size: 16px;
+                padding: 13px 18px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<div class="balloon b1">🎈</div>
-<div class="balloon b2">🎀</div>
-<div class="balloon b3">💌</div>
-<div class="balloon b4">🎈</div>
+    <div class="balloon b1">🎈</div>
+    <div class="balloon b2">🎀</div>
+    <div class="balloon b3">💌</div>
+    <div class="balloon b4">🎈</div>
 
-<div class="card">
+    <div class="card">
 
-    <div class="emoji">✨💗🎂💗✨</div>
+        <div class="emoji">✨💗🎂💗✨</div>
 
-    <h1>Happy Birthday Bestie!</h1>
+        <h1>Happy Birthday Bestie!</h1>
 
-    <h2>🌷 A Little Surprise Just For You 🌷</h2>
+        <h2>🌷 A Little Surprise Just For You 🌷</h2>
 
-    <p>
-        Today is all about celebrating the amazing person you are.
-        Thank you for all the laughter, memories and endless support.
-        You deserve all the happiness in the world. 💕
-    </p>
-<a href="memories.html">
-    🎁 Open Your Surprise 🎁
-</a>
+        <p>
+            Today is all about celebrating the amazing person you are.
+            Thank you for all the laughter, memories and endless support.
+            You deserve all the happiness in the world. 💕
+        </p>
 
-</div>
+        <a href="memories.html" class="surprise-btn">
+            🎁 Open Your Surprise 🎁
+        </a>
+
+    </div>
 
 </body>
 </html>
