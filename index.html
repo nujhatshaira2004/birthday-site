@@ -2,178 +2,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneho's Birthday 🎀</title>
 
-    <title>Sneho's Birthday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 30px 15px;
-            font-family: 'Trebuchet MS', sans-serif;
-            background: linear-gradient(
-                135deg,
-                #ffb6d9,
-                #ffcce6,
-                #e6ccff
-            );
-            overflow-x: hidden;
-        }
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 18px;
+    overflow-x: hidden;
+    font-family: 'DM Sans', sans-serif;
+    background:
+        radial-gradient(circle at 10% 15%, #fff8fc 0, transparent 30%),
+        radial-gradient(circle at 90% 85%, #e9dcff 0, transparent 35%),
+        linear-gradient(135deg, #ffe4ef, #fff0f6, #eee5ff);
+}
 
-        .balloon {
-            position: fixed;
-            font-size: 50px;
-            animation: float 6s infinite ease-in-out;
-            pointer-events: none;
-        }
+.card {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 720px;
+    padding: 52px 45px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.77);
+    border: 1px solid rgba(255,255,255,0.95);
+    border-radius: 30px;
+    box-shadow: 0 18px 65px rgba(178, 104, 151, 0.16);
+    backdrop-filter: blur(12px);
+    animation: appear 1s ease both;
+}
 
-        .b1 {
-            left: 5%;
-            top: 10%;
-        }
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        .b2 {
-            right: 5%;
-            top: 15%;
-            animation-delay: 1s;
-        }
+.top-label {
+    display: inline-block;
+    padding: 9px 17px;
+    margin-bottom: 25px;
+    border: 1px solid #f2c8dc;
+    border-radius: 50px;
+    color: #ad6486;
+    background: #fff4f9;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
 
-        .b3 {
-            left: 10%;
-            bottom: 10%;
-            animation-delay: 2s;
-        }
+.main-emoji {
+    font-size: 45px;
+    margin-bottom: 20px;
+    animation: bob 3s ease-in-out infinite;
+}
 
-        .b4 {
-            right: 10%;
-            bottom: 12%;
-            animation-delay: 3s;
-        }
+@keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
+h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #b94f82;
+    font-size: clamp(35px, 6vw, 57px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
 
-            50% {
-                transform: translateY(-20px);
-            }
-        }
+h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(20px, 4vw, 26px);
+    color: #9e6487;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
 
-        .card {
-            background: white;
-            padding: 45px 35px;
-            border-radius: 25px;
-            text-align: center;
-            width: 100%;
-            max-width: 700px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-            position: relative;
-            z-index: 1;
-        }
+.message {
+    max-width: 540px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 2;
+    color: #75616e;
+}
 
-        h1 {
-            color: #ff1493;
-            font-size: clamp(30px, 5vw, 52px);
-            line-height: 1.3;
-            margin-bottom: 18px;
-            overflow-wrap: break-word;
-        }
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 27px;
+    background: linear-gradient(135deg, #d77da8, #b980c8);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(193, 111, 162, 0.25);
+    transition: transform .25s, box-shadow .25s;
+}
 
-        h2 {
-            color: #c71585;
-            font-size: clamp(19px, 3vw, 26px);
-            line-height: 1.5;
-            margin-bottom: 22px;
-        }
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(193, 111, 162, 0.35);
+}
 
-        p {
-            font-size: 19px;
-            line-height: 1.8;
-            color: #555;
-            overflow-wrap: break-word;
-        }
+.footer {
+    margin-top: 27px;
+    color: #b18da5;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
 
-        .emoji {
-            font-size: 35px;
-            margin-bottom: 20px;
-        }
+.music-btn {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 10;
+    padding: 11px 15px;
+    background: rgba(255,255,255,.85);
+    color: #a4517d;
+    border: 1px solid #f1c9dd;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+}
 
-        .surprise-btn {
-            display: inline-block;
-            margin-top: 28px;
-            text-decoration: none;
-            background: #ff1493;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 15px;
-            font-size: 19px;
-            line-height: 1.5;
-            transition: transform 0.3s, background 0.3s;
-        }
+.float-item {
+    position: fixed;
+    z-index: 1;
+    bottom: -40px;
+    pointer-events: none;
+    animation: rise linear forwards;
+}
 
-        .surprise-btn:hover {
-            transform: scale(1.05);
-            background: #ff007f;
-        }
+@keyframes rise {
+    from { transform: translateY(0) rotate(0); opacity: 0; }
+    10% { opacity: .8; }
+    to { transform: translateY(-115vh) rotate(35deg); opacity: 0; }
+}
 
-        @media (max-width: 480px) {
-            .card {
-                padding: 35px 20px;
-            }
+#confetti {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
 
-            p {
-                font-size: 17px;
-            }
+@media (max-width: 500px) {
+    .card {
+        padding: 38px 22px;
+        border-radius: 24px;
+    }
 
-            .balloon {
-                font-size: 35px;
-            }
+    .message {
+        font-size: 15px;
+    }
 
-            .surprise-btn {
-                font-size: 16px;
-                padding: 13px 18px;
-            }
-        }
-    </style>
+    .music-btn {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <div class="balloon b1">🎈</div>
-    <div class="balloon b2">🎀</div>
-    <div class="balloon b3">💌</div>
-    <div class="balloon b4">🎈</div>
+<button class="music-btn" id="musicButton" type="button">
+    ♫ Play Music
+</button>
 
-    <div class="card">
+<!-- Add your own music file named birthday-song.mp3 -->
+<audio id="birthdayMusic" src="birthday-song.mp3" loop preload="none"></audio>
 
-        <div class="emoji">✨💗🎂💗✨</div>
+<canvas id="confetti"></canvas>
 
-        <h1>Happy Birthday Bestie!</h1>
+<div class="card">
+    <div class="top-label">A LITTLE CELEBRATION OF YOU</div>
 
-        <h2>🌷 A Little Surprise Just For You 🌷</h2>
+    <div class="main-emoji">✨💗🎂💗✨</div>
 
-        <p>
-            Today is all about celebrating the amazing person you are.
-            Thank you for all the laughter, memories and endless support.
-            You deserve all the happiness in the world. 💕
-        </p>
+    <h1>Happy Birthday Bestie!</h1>
 
-        <a href="memories.html" class="surprise-btn">
-            🎁 Open Your Surprise 🎁
-        </a>
+    <h2>🌷 A Little Surprise Just For You 🌷</h2>
 
-    </div>
+    <p class="message">
+        Today is all about celebrating the amazing person you are.
+        Thank you for all the laughter, memories and endless support.
+        You deserve all the happiness in the world. 💕
+    </p>
+
+    <a href="memories.html" class="button" id="surpriseButton">
+        🎁 Open Your Surprise 🎁
+    </a>
+
+    <div class="footer">MADE WITH LOVE, JUST FOR YOU ♡</div>
+</div>
+
+<script>
+const music = document.getElementById("birthdayMusic");
+const musicButton = document.getElementById("musicButton");
+
+musicButton.addEventListener("click", async () => {
+    if (music.paused) {
+        try {
+            await music.play();
+            musicButton.textContent = "♫ Pause Music";
+        } catch (error) {
+            alert("Please add birthday-song.mp3 to your website folder first!");
+        }
+    } else {
+        music.pause();
+        musicButton.textContent = "♫ Play Music";
+    }
+});
+
+// Floating hearts and sparkles
+const decorations = ["♡", "♥", "✦", "✨", "🎀"];
+
+function createFloat() {
+    const item = document.createElement("span");
+    item.className = "float-item";
+    item.textContent = decorations[
+        Math.floor(Math.random() * decorations.length)
+    ];
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.fontSize = (14 + Math.random() * 17) + "px";
+    item.style.color = ["#d782ad", "#bd9bdb", "#ed9fc4"][
+        Math.floor(Math.random() * 3)
+    ];
+    item.style.animationDuration = (7 + Math.random() * 5) + "s";
+
+    document.body.appendChild(item);
+    setTimeout(() => item.remove(), 12500);
+}
+
+setInterval(createFloat, 650);
+
+// Confetti animation
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+let particles = [];
+let animationFrame;
+let confettiUntil = 0;
+
+function resizeCanvas() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+function celebrate() {
+    const colors = ["#f29fc5", "#c8a3eb", "#ffe28a", "#f7b7b2", "#ffffff"];
+
+    for (let i = 0; i < 140; i++) {
+        particles.push({
+            x: Math.random() * window.innerWidth,
+            y: -Math.random() * window.innerHeight * .6,
+            vx: (Math.random() - .5) * 4,
+            vy: 2 + Math.random() * 4,
+            size: 4 + Math.random() * 6,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            rotation: Math.random() * 6,
+            spin: (Math.random() - .5) * .15
+        });
+    }
+
+    confettiUntil = performance.now() + 3500;
+
+    if (!animationFrame) {
+        animationFrame = requestAnimationFrame(drawConfetti);
+    }
+}
+
+function drawConfetti(now) {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+    particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rotation += p.spin;
+        p.vy += .025;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 1.5);
+        ctx.restore();
+    });
+
+    particles = particles.filter(p => p.y < window.innerHeight + 30);
+
+    if (now < confettiUntil || particles.length > 0) {
+        animationFrame = requestAnimationFrame(drawConfetti);
+    } else {
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        animationFrame = null;
+    }
+}
+
+document.getElementById("surpriseButton").addEventListener("click", celebrate);
+</script>
 
 </body>
 </html>

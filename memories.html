@@ -321,5 +321,56 @@
         Made with love, just for you 💗
     </div>
 
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" onclick="toggleMusic()">
+    ♫ Play Music
+</button>
+
+<style>
+    #musicBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 30px;
+        background: #ff1493;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px #ff149344;
+        z-index: 1000;
+    }
+
+    #musicBtn:hover {
+        background: #c71585;
+    }
+</style>
+
+<script>
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+
+    async function toggleMusic() {
+        if (music.paused) {
+            try {
+                await music.play();
+                musicBtn.textContent = "♫ Pause Music";
+            } catch (error) {
+                alert("Please add birthday-song.mp3 to your website folder.");
+            }
+        } else {
+            music.pause();
+            musicBtn.textContent = "♫ Play Music";
+        }
+    }
+</script>
+</body>
+</html>
+
 </body>
 </html>
